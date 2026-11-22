@@ -1,0 +1,11 @@
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\bin\Debug\net8.0\ConveyorLib.deps.json
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\bin\Debug\net8.0\ConveyorLib.dll
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\bin\Debug\net8.0\ConveyorLib.pdb
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\obj\Debug\net8.0\ConveyorLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\obj\Debug\net8.0\ConveyorLib.AssemblyInfoInputs.cache
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\obj\Debug\net8.0\ConveyorLib.AssemblyInfo.cs
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\obj\Debug\net8.0\ConveyorLib.csproj.CoreCompileInputs.cache
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\obj\Debug\net8.0\ConveyorLib.dll
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\obj\Debug\net8.0\refint\ConveyorLib.dll
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\obj\Debug\net8.0\ConveyorLib.pdb
+C:\Users\aksha\Downloads\ConveyorBeginner\ConveyorBeginner\ConveyorLib\obj\Debug\net8.0\ref\ConveyorLib.dll
