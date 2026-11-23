@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LoadShorting")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea48ec5a2795dc89884f610ea6ac0921c9b0fcca")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8831eaf51dd1ada26117ec66552855b6e8454d78")]
 [assembly: System.Reflection.AssemblyProductAttribute("LoadShorting")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LoadShorting")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -23,10 +23,22 @@ public class RandomHelper
     }
 
     /// <summary>
-    /// Returns true with a chance of "percent" (0 = never, 100 = always)
+    /// Decides randomly whether something happens, with a chance given in percent.
     /// </summary>
-    /// <param name="percent"></param>
-    /// <returns></returns>
+    /// <param name="percent">
+    /// The chance that it happens, as a whole number from 0 to 100.
+    /// 0 = never happens, 50 = about every second time, 100 = always happens.
+    /// </param>
+    /// <returns>
+    /// true if it happens this time, false if it does not.
+    /// </returns>
+    /// <remarks>
+    /// How it works: a random number from 1 to 100 is drawn. If the number is
+    /// less than or equal to the percent value, it counts as a "hit".
+    /// Example with percent = 30: the numbers 1 to 30 are a hit and 31 to 100
+    /// are a miss, so it returns true about 30 times out of 100.
+    /// It is used to decide whether a load is a tote and whether a divert fails.
+    /// </remarks>
     public bool IsHit(int percent)
     {
         int number = GetNumber(1, 100);

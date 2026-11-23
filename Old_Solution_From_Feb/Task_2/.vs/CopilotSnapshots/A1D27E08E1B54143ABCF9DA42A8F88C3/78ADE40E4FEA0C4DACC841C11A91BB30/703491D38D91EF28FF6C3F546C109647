@@ -1,0 +1,139 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.Intrinsics.X86;
+
+namespace Task_2
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            /* I am asking user to input the number of available routes, total number of orders to be sorted, maximum consecutive orders that can be sorted on a single route and maximum failure percentage per route. This way it is easier to experimetn with different values and see how it affects the distribution of orders and failure rates across the routes. It also allows for more flexibility in testing different scenarios. */ 
+
+            // number of available routes, atleast 1 route should be available
+            Console.WriteLine("Enter the number of available routes (n, must be >= 1): ");
+            int n;
+            
+            //to check if given input is valid or not, if not then ask user to enter again until valid input is given
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out n) && n >= 1)
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid input. Please enter an integer greater than or equal to 1: ");
+            }
+
+            //create a list to store the routes
+            String[] routes = new String[n];   
+            for (int i = 0; i < n; i++)
+            {
+               routes[i] = "route" + (i + 1); // assigning route names as route1, route2, etc.
+            }
+
+            //Decide or give input about total number of orders needed to be shorted, atleast 1 order should be there
+            Console.WriteLine("Enter the total number of orders to be sorted (m, must be >= 1): ");
+            int totalOrders;
+
+            //check for the valide entry of total orders, if not valid then ask user to enter again until valid input is given
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out totalOrders) && totalOrders >= 1)
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid input. Please enter an integer greater than or equal to 1: ");
+            }
+
+            //decide about maximum consecutive orders that can be sorted on a single route, atleast 1 order should be there
+            Console.WriteLine("Enter the maximum number of consecutive orders that can be sorted on a single route (k, must be >= 1): ");
+            int maxConsecutiveOrders;
+
+            while (true) {  
+                if (int.TryParse(Console.ReadLine(), out maxConsecutiveOrders) && maxConsecutiveOrders >= 1)
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid input. Please enter an integer greater than or equal to 1: ");
+            }
+
+            //Ask for maximum number of failure percentage per route
+            Console.WriteLine("Enter the maximum failure percentage per route (p, must be between 0 and 100): ");
+            int maxFailurePercentage;
+
+            while (true) {  
+                if (int.TryParse(Console.ReadLine(), out maxFailurePercentage) && maxFailurePercentage >= 0 && maxFailurePercentage <= 100)
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid input. Please enter an integer between 0 and 100: ");
+            }
+
+            //randomaly select the route
+            int[] assignedCounts = new int[n];     //How many orders are assigned to each route, initialized to 0 for all routes
+            int[] failures = new int[n];   //How many orders are failed on each route, initialized to 0 for all routes
+            int route0Count = 0;        // to keep track of the number of orders goes to route0 after failure
+            
+            Random rand = new Random();
+
+            //For each route, determine failure percentage (uniformaly distributed)
+            int[] failurePercent = new int[n];
+            for (int i = 0; i < n; i++)
+            {
+                failurePercent[i] = rand.Next(0, maxFailurePercentage + 1); // assign a random failure percentage to each route
+            }
+
+            //randomaly combine orders into the groups of maximum consecutive orders and assign them to the routes
+            int processedOrders = 0;   // to keep track of the number of orders processed so far
+            while (processedOrders < totalOrders)
+            {
+                // randomly determine the size of the next group of orders (between 1 and k)
+                int groupSize = rand.Next(1, maxConsecutiveOrders + 1);
+
+                // pick a random route index with uniformly random distribution
+                int idx = rand.Next(0, n);
+
+                //now assign this route to the group of order
+                for (int i = 0; i < groupSize && processedOrders < totalOrders; i++)
+                {
+                    //add to the assigned route count
+                    assignedCounts[idx]++;
+
+                    //randomaly route failure based on the failure percentage of the assigned route
+                    bool isFailed = rand.Next(0, 100) < failurePercent[idx];
+                    if (isFailed)
+                    {
+                        failures[idx]++;
+                        if (idx == 0)
+                        {
+                            route0Count++;  // update the count of orders that failed on route0
+                        }
+                    }
+                        processedOrders++; // update the count of processed orders
+                }
+            }
+
+            //print the results
+            Console.WriteLine();
+            Console.WriteLine("Route\tAssigned Orders\tFailed Orders\tFailure Percentage Summary:");
+            Console.WriteLine("Total Orders: " + totalOrders);
+
+            for(int i = 0; i < n; i++)
+            {
+                int assigned = assignedCounts[i];
+                int failed = failures[i];
+                int successful = assigned - failed;
+                double assignedPercentage = totalOrders > 0 ? (double)assigned / totalOrders * 100 : 0; // calculate assigned percentage for each route
+                double successPercentage = assigned > 0 ? (double)successful / assigned * 100 : 0; // calculate success percentage for each route
+                double failurePercentage = assigned > 0 ? (double)failed / assigned * 100 : 0; // calculate failure percentage for each route
+
+                // print the results for each route
+                Console.WriteLine(routes[i] + "\t" + assigned + "\t\t" + failed + "\t\t" + successful + "\t\t" + assignedPercentage.ToString("F2") + "%\t\t" + successPercentage.ToString("F2") + "%\t\t" + failurePercentage.ToString("F2") + "%");
+            }
+
+            // print the summary of route0
+            Console.WriteLine();
+            Console.WriteLine("Number of Total Orders that went to route0 after failure: " + route0Count);
+        }
+    }
+}

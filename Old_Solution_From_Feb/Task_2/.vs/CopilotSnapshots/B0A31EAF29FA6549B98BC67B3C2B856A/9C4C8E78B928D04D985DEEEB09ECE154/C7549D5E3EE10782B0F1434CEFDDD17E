@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Task_2
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            // number of available routes, atleast 1 route should be available
+            Console.WriteLine("Enter the number of available routes (n, must be >= 1): ");
+            int n;
+            
+            //to check if given input is valid or not, if not then ask user to enter again until valid input is given
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out n) && n >= 1)
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid input. Please enter an integer greater than or equal to 1: ");
+            }
+
+            //create a list to store the routes
+            String[] routes = new String[n];   
+            for (int i = 0; i < n; i++)
+            {
+               routes[i] = "route" + (i + 1); // assigning route names as route1, route2, etc.
+            }
+
+            //Decide or give input about total number of orders needed to be shorted, atleast 1 order should be there
+            Console.WriteLine("Enter the total number of orders to be sorted (m, must be >= 1): ");
+            int totalOrders;
+
+            //check for the valide entry of total orders, if not valid then ask user to enter again until valid input is given
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out totalOrders) && totalOrders >= 1)
+                {
+                    break;
+                }
+                Console.WriteLine("Invalid input. Please enter an integer greater than or equal to 1: ");
+            }
+    }
+}       

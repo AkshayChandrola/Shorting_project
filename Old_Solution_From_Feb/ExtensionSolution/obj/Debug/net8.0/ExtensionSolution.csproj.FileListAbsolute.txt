@@ -1,0 +1,14 @@
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\bin\Debug\net8.0\ExtensionSolution.exe
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\bin\Debug\net8.0\ExtensionSolution.deps.json
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\bin\Debug\net8.0\ExtensionSolution.runtimeconfig.json
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\bin\Debug\net8.0\ExtensionSolution.dll
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\bin\Debug\net8.0\ExtensionSolution.pdb
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\ExtensionSolution.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\ExtensionSolution.AssemblyInfoInputs.cache
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\ExtensionSolution.AssemblyInfo.cs
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\ExtensionSolution.csproj.CoreCompileInputs.cache
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\ExtensionSolution.dll
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\refint\ExtensionSolution.dll
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\ExtensionSolution.pdb
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\ExtensionSolution.genruntimeconfig.cache
+C:\Users\aksha\OneDrive\Desktop\TGW\ExtensionSolution\obj\Debug\net8.0\ref\ExtensionSolution.dll

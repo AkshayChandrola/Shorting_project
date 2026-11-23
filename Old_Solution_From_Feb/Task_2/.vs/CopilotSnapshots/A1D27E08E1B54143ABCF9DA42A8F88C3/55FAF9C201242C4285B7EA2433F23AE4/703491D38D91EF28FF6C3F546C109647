@@ -1,0 +1,25 @@
+﻿using System;
+using Task_2.Services;
+
+namespace Task_2
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = InputService.ReadInt("Enter the number of available routes (n, must be >= 1): ", v => v >= 1, "Invalid input. Please enter an integer greater than or equal to 1: ");
+            int totalOrders = InputService.ReadInt("Enter the total number of orders to be sorted (m, must be >= 1): ", v => v >= 1, "Invalid input. Please enter an integer greater than or equal to 1: ");
+            int maxConsecutive = InputService.ReadInt("Enter the maximum number of consecutive orders that can be sorted on a single route (k, must be >= 1): ", v => v >= 1, "Invalid input. Please enter an integer greater than or equal to 1: ");
+            int maxFailurePercentage = InputService.ReadInt("Enter the maximum failure percentage per route (p, must be between 0 and 100): ", v => v >= 0 && v <= 100, "Invalid input. Please enter an integer between 0 and 100: ");
+
+            var routeService = new RouteService(n, totalOrders, maxConsecutive, maxFailurePercentage);
+
+            int route0FailureCount = 0;
+            routeService.OrderProcessed += (s, e) => { if (e.IsFailed && e.RouteIndex == 0) route0FailureCount++; };
+
+            routeService.ProcessOrders();
+
+            ReportService.PrintReport(routeService.Routes, totalOrders, route0FailureCount);
+        }
+    }
+}
